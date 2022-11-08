@@ -18,7 +18,7 @@ userRrouter.patch('/me', celebrate({
   }).unknown(true),
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
-    email: Joi.string().unique().email(),
+    email: Joi.string().email(),
   }),
 }), updateUserProfile);
 
