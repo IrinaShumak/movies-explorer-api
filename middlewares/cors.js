@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://irinashumak.students.nomoredomains.icu',
-  'https://irinashumak.students.nomoredomains.icu',
+  'https://movies.irinashumak.nomoredomains.icu',
+  'https://movies.irinashumak.nomoredomains.icu',
 ];
 
 module.exports = (req, res, next) => {
