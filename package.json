@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "cross-env PORT=3000 nodemon app.js",
+    "dev": "cross-env PORT=5000 nodemon app.js",
     "lint": "npx eslint ."
   },
   "repository": {
