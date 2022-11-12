@@ -4,7 +4,7 @@ require('dotenv').config();
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const routes = require('./routes/routes');
+const routes = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 const errorHandler = require('./middlewares/errors-handler');
