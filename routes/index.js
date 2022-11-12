@@ -29,3 +29,5 @@ router.use('/movies', movieRouter);
 router.use('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
+
+module.exports = router;
