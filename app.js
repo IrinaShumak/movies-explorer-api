@@ -9,7 +9,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 const errorHandler = require('./middlewares/errors-handler');
 
-const { PORT = 5000 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 app.use(helmet());
