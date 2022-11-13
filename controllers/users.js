@@ -87,8 +87,11 @@ module.exports.updateUserProfile = (req, res, next) => {
         return;
       }
       if (err.name === 'CastError') {
-        next(new NotFoundError('Пользователь с указанным _id не найден.'));
+        next(new IncorrectInputError('Переданы некорректные данные при обновлении профиля'));
         return;
+      }
+      if (err.code === 11000) {
+        next(new DublicationError('Такая почта уже существует'));
       }
       next(err);
     });

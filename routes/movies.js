@@ -7,25 +7,15 @@ const {
   getAllMovies,
 } = require('../controllers/movies');
 
-movieRouter.get('/', celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
-}), getAllMovies);
+movieRouter.get('/', getAllMovies);
 
 movieRouter.delete('/:_id', celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
   params: Joi.object().keys({
     _id: Joi.string().hex().length(24).required(),
-  }).unknown(true),
+  }),
 }), deleteMovie);
 
 movieRouter.post('/', celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string().required(),
-  }).unknown(true),
   body: Joi.object().keys({
     country: Joi.string().required(),
     director: Joi.string().required(),
@@ -37,7 +27,7 @@ movieRouter.post('/', celebrate({
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
     thumbnail: Joi.string().required().regex(/^https?:\/\/(www.)?[\w-]+\..+#?$/),
-    movieId: Joi.string().hex().length(24).required(),
+    movieId: Joi.number().unsafe().integer().required(),
   }),
 }), createMovie);
 

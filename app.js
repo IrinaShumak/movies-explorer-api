@@ -4,7 +4,7 @@ require('dotenv').config();
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const router = require('./routes/index');
+const router = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 const errorHandler = require('./middlewares/errors-handler');
@@ -18,7 +18,7 @@ app.use(cors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {});
+mongoose.connect('mongodb://localhost:27017/moviesdb', {});
 
 app.use(requestLogger); // подключаем логгер запросов
 
