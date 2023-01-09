@@ -1,7 +1,7 @@
 const allowedCors = [
   'https://movies.irinashumak.nomoredomains.icu',
   'https://movies.irinashumak.nomoredomains.icu',
-  'http://localhost:3000',
+  'http://localhost:7777',
 ];
 
 module.exports = (req, res, next) => {
